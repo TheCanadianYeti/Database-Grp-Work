@@ -1,0 +1,48 @@
+Database Design and Implementation for a Fitness Center
+
+Note: - Case Study will be evaluated on group work: Group Work – 20 Marks
+	
+Details about possible points and weightage for Group Work is given below.
+
+Objective
+The objective of the case study is to reinforce the concepts learnt in the course through engaging in a database design process from the development of business rules to the implementation.
+The project
+In this case study, your team is asked to design and implement the database component of a Fitness Center. Few wireframe screens (you will find them at the end of this document) were made during the requirements analysis of the project and those screens will be your main source of information on the entities, attributes and relationships between the entities. You need to identify the business entities and attributes from the wireframes. Graphical User Interface components such as Windows and Buttons and Lists are not entities.  Below are the required tasks from your group:
+   Conceptual Model
+    • Conceptual EER model. The model will be done using Visual Paradigm, Visio, Draw.IO or any other equivalent software. You can also make the Model using UML notation. The models will not be accepted if made by hand
+Relational Database
+    • Relational logical data model: convert the conceptual model to relational logical model and make data structure diagram for the tables make sure that all the tables are in the 3rd normal form.  You need to state if every table that you created is in the third normal form or not. If not then you need to convert it to the third normal form
+    • Develop the SQL scripts that will create the tables and enforce all the appropriate constraints
+    • Develop sample SQL scripts that will insert the data to the database (one row in each table)
+    • Convert at least 2 entities to MongoDB Collections. Write the scripts that will Create the collection(s)
+    • Create SQL SELECT statements that will:
+    1. Return all the information displayed on the Locations tab (wireframe 1)
+    2. Return all the information displayed on the Midtown Location tab (wireframe 1)
+    3. Return all the information displayed on the Coaches tab (wireframe 3)
+    4. Return all the information displayed on the Coach Sally tab (wireframe 4)
+Deliverables
+Deliverable	Delivery Date	Possible Points	Weightage
+1	Conceptual Model	ER Diagram	Week 9 (Sunday,11:59 pm)	20	
+
+
+20 (Group Work)
+2	Relational	Data Structure Diagram (ER to Relational Model)	Week 9
+(Sunday,11:59 pm)	10	
+3		Create tables	Week 11
+(Sunday,11:59 pm)	10	
+4		Insert rows	Week 11
+(Sunday,11:59 pm)	10	
+5	NoSLQ	Convert entities to MongoDB collection	Week 12 (Sunday,11:59 pm)	10	
+6	Select statements		Week 12 (Sunday,11:59 pm)	20	
+7	Presentation		Week 13
+(Sunday,11:59 pm)	20	
+Total possible points	100	20
+
+Instructions
+    • All the deliverables will be delivered as one report in Microsoft word format to the Slate Drop Box
+    • The report should be professionally formatted and it should include a cover page that include the name of the report and the group members, page number in the footer of each place, etc.
+    • The diagrams must be done using draw.io or any equivalent software. Hand drawn sketches will not be accepted.
+    • The wireframes should give you enough information on the needed entity types, attributes and their relation. You can make any assumptions as needed; however, you need to state those assumptions in the EER diagram.
+    • You will work in groups of 2 students.
+    • The case Study has 6 deliverables, you need to consult with each other and agree to assign a deliverable lead to each of the deliverables. Each of you will be a lead of two or three deliverables. The deliverable lead is responsible for coordinating the work on the deliverable with the other team members. Additionally, the deliverable lead is ultimately responsible for the quality and the submission of the deliverable. If I receive a complaint from a group that the deliverable lead is falling short on coordinating and\or delivering his\her deliverable, I reserve the right to interview the group and to give the other members of the group bonus for their ideas on how to improve the deliverable.
+All the group members will abide to the rules of the group contract.
