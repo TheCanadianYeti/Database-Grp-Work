@@ -1,0 +1,97 @@
+# Speaker Script
+## Database Design & Implementation for a Fitness Center
+### Week 13 Presentation — 2 Speakers
+---
+
+## SLIDE 1 — Title Slide
+**SPEAKER A**
+
+Good [morning/afternoon], everyone. My name is [Marcus], and this is [Nickolas]. Today we are presenting our group project: Database Design and Implementation for a Fitness Center. This project covers the full database design process, from identifying business entities in wireframes, all the way through to SQL and MongoDB implementation. Let's get started.
+
+---
+
+## SLIDE 2 — Agenda
+**SPEAKER B**
+
+Here is what we will cover today. We will start with a quick project overview, then walk through each deliverable in order. That includes our EER diagram, the relational model, the SQL scripts, the MongoDB collections, and our SELECT statements. We will wrap up with a summary. We have covered all six deliverables, so this presentation follows the full scope of the project.
+
+---
+
+## SLIDE 3 — Project Overview
+**SPEAKER A**
+
+The objective of this case study was to design and implement a database for a fitness center. We were given a set of wireframe screens and had to identify the entities, attributes, and relationships from those screens. The result is a database with 14 tables, all in Third Normal Form. We mapped queries to 4 wireframe screens, created 2 MongoDB collections, and completed all 6 deliverables.
+
+---
+
+## SLIDE 4 — Conceptual EER Diagram
+**SPEAKER B**
+
+This is our Conceptual EER Diagram, built using Draw.io. We identified 8 strong entities: Member, Coach, Location, Class, Amenity, Certificate, and two more. We also identified 2 weak entities: Review and Reference. Review is weak because it depends on both a Coach and a Member. Reference is weak because it belongs to a Coach.
+
+The association tables you see here, like Member_Coach, Location_Coach, and Class_Enrollment, resolve the many-to-many relationships between entities. Each entity's primary key is underlined, and derived attributes like avgRating are marked with a DA label.
+
+---
+
+## SLIDE 5 — Relational Model (3NF)
+**SPEAKER A**
+
+This is the Relational Model, which we derived from the EER diagram. We converted every entity and relationship into a table. The result is 14 tables total, listed at the bottom right.
+
+To verify Third Normal Form, we checked three conditions. First normal form: all attributes are atomic with no repeating groups. Second normal form: every non-key attribute depends on the complete primary key. Third normal form: there are no transitive dependencies. Every attribute depends only on the primary key, not on another non-key attribute.
+
+The association tables use composite primary keys. For example, Member_Coach uses memberID and coachID together as the PK. The derived attributes avgRating and overallRating are calculated values, but we kept them in the table for query performance.
+
+---
+
+## SLIDE 6 — SQL: CREATE TABLE Scripts
+**SPEAKER B**
+
+Here you can see samples of our CREATE TABLE scripts. On the left we have the Member and Coach tables. On the right we have the Location table and an example of an association table, Location_Coach.
+
+Every table enforces its primary key. Tables that reference other tables use FOREIGN KEY constraints. For example, Location_Coach has two foreign keys, one pointing to Location and one pointing to Coach. This enforces referential integrity across the database. The same pattern applies to all 14 tables.
+
+---
+
+## SLIDE 7 — SQL: INSERT Sample Data
+**SPEAKER A**
+
+For Deliverable 4, we inserted one sample row into every table. You can see five examples here. We inserted a member named Alex Johnson, a coach named Jordan Park, a location called Downtown Hub, a class called Morning HIIT, and a link between the member and coach using the Member_Coach table.
+
+These inserts serve two purposes. They validate that the schema is correct, and they test that the foreign key constraints work as expected. For example, the Class insert references coachID 1 and locationID 1, which must already exist in the Coach and Location tables.
+
+---
+
+## SLIDE 8 — MongoDB Collections
+**SPEAKER B**
+
+For Deliverable 5, we converted two entities to MongoDB collections: Locations and Coaches. You can see the scripts on the left. We use the fitness_center database, create each collection, and insert a document.
+
+The key difference from SQL is that MongoDB allows embedded arrays. For Locations, the amenities are stored directly inside the document as an array. For Coaches, we embed certificates and references as nested objects. This is why MongoDB is a good fit here. In SQL, amenities require a separate junction table. In MongoDB, everything for one location lives in one document. This is what we mean by polyglot persistence: using the right tool for each type of data.
+
+---
+
+## SLIDE 9 — SQL SELECT Statements
+**SPEAKER A**
+
+For Deliverable 6, we wrote SELECT statements to return the data shown in each of the four wireframes.
+
+Wireframe 1 returns the locations a member has visited this month, with visit counts. It uses a JOIN between Member_Visit and Location, filters by memberID and the current month using strftime, and groups by location.
+
+Wireframe 2 returns the details for the Midtown Studio location, including its amenities and coaches. We use two separate queries: one for the location details and one that joins through the Location_Amenity association table.
+
+Wireframe 3 returns the coaches. The first query shows only the coaches assigned to the logged-in member. The second returns all coaches in the system.
+
+Wireframe 4 returns a full coach profile, including their name, level, rating, training philosophy, certificates, and references. Each piece comes from a separate query joined through the Coach_Certificate table.
+
+---
+
+## SLIDE 10 — Summary
+**SPEAKER B**
+
+To wrap up. Our EER diagram identified all the entities and relationships from the wireframes. Our relational model converted those into 14 tables, all verified to be in Third Normal Form. We implemented the full schema in SQL with proper constraints and inserted sample data. We also showed how two of those entities, Locations and Coaches, translate naturally into MongoDB documents. And we wrote SELECT statements that return exactly what each wireframe screen requires.
+
+That covers the full project. We are happy to take any questions.
+
+---
+*End of script.*
